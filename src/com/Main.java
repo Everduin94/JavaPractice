@@ -1,6 +1,7 @@
 package com;
 
 import com.chapter2effectivejava.NutritionFacts;
+import com.chapter2effectivejava.OddNumberFinder;
 
 public class Main {
 
@@ -11,5 +12,7 @@ public class Main {
                 .calories(100).sodium(35).carbohydrate(27).build();
         cocaCola.printAllNutritionFacts();
 
+        int[] intArray = {20, 40, 60, 80, 100, 5};
+        OddNumberFinder.findOdd(intArray);
     }
 }
