@@ -12,7 +12,7 @@ public class Main {
                 .calories(100).sodium(35).carbohydrate(27).build();
         cocaCola.printAllNutritionFacts();
 
-        int[] intArray = {20, 40, 60, 80, 100, 5};
-        OddNumberFinder.findOdd(intArray);
+        int[] intArray = {20, 20, 40, 40, 60, 60, 80, 80, 100};
+        System.out.println(OddNumberFinder.findOddOccurance(intArray));
     }
 }
