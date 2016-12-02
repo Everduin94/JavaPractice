@@ -1,11 +1,10 @@
-package com.udemySwingCourse.Swing2;
+package com.udemySwingCourse._6Communication;
 
-import javax.swing.SwingUtilities;
+import javax.swing.*;
 
 public class App {
 
     public static void main(String[] args) {
-
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 new MainFrame();

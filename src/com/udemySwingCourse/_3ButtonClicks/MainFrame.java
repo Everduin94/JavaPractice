@@ -1,10 +1,9 @@
-package com.udemySwingCourse.Swing2;
+package com.udemySwingCourse._3ButtonClicks;
 
-import java.awt.BorderLayout;
-
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JTextArea;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 //This is a child class of JFrame
 public class MainFrame extends JFrame { //Border Layouts and Text Areas
@@ -17,14 +16,26 @@ public class MainFrame extends JFrame { //Border Layouts and Text Areas
         super("Hello World"); //Call to JFrame
         //Equivalent to JFrame frame = new JFrame("Hello");
 
+        /*To find more layout manager styles
+        * Google Visual Layout Managers*/
+
         //This is the layout manager
         setLayout(new BorderLayout());
-/*To find more layout manager styles
-* Google Visual Layout Managers*/
 
 
         textArea = new JTextArea();
         btn = new JButton("Click Me!");
+
+        //ActionListener is an interface
+        btn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //Method is run whenever button is clicked
+
+                //Directly invoking a method on the textArea
+                textArea.append("Hello\n");
+            }
+        });
 
         add(textArea, BorderLayout.CENTER);
         add(btn, BorderLayout.SOUTH);

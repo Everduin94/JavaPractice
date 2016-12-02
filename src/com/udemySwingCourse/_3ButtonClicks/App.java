@@ -1,6 +1,6 @@
-package com.udemySwingCourse.Swing2;
+package com.udemySwingCourse._3ButtonClicks;
 
-import javax.swing.SwingUtilities;
+import javax.swing.*;
 
 public class App {
 

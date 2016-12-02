@@ -1,11 +1,11 @@
-package com.udemySwingCourse.Swing2;
+package com.udemySwingCourse._5Toolbars;
 
-import javax.swing.SwingUtilities;
+import javax.swing.*;
 
 public class App {
 
     public static void main(String[] args) {
-
+    /*Goal, place button in toolbar (5)*/
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 new MainFrame();

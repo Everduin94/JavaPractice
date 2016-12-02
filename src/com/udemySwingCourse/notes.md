@@ -9,3 +9,6 @@ Docs.oracle.com - JavaDocs
 Notes:
 
 Layout Managers
+- Decide where the components go
+- Move them to appropriate locations
+- etc...
