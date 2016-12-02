@@ -6,3 +6,6 @@ Visual Guide Swing Components
 Visual Guide to Swing Layout Managers
 Docs.oracle.com - JavaDocs
 
+Notes:
+
+Layout Managers
