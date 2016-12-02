@@ -36,6 +36,9 @@ public final class CompareSets {
     }
 
     public static String iterateOverMap(Map<String,String> map, @Nullable String mapKey){
+        /*Fixed - Just use the get method if you know the key*/
+        String valueAtKey = map.get(mapKey);
+
         for(Map.Entry<String, String> entry : map.entrySet()){
             if (mapKey.equals(entry.getKey())){
                 System.out.println("Value at key is: " + entry.getValue());
