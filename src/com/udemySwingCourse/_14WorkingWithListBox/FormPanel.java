@@ -1,4 +1,4 @@
-package com.udemySwingCourse._13ListBoxes;
+package com.udemySwingCourse._14WorkingWithListBox;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -52,17 +52,6 @@ public class FormPanel extends JPanel {
                 String ageCat = (String) ageList.getSelectedValue();
 
                 System.out.println(ageCat);
-
-                /*Controller aspect (busines logic)
-                Should not depend on things directly
-                connected to the view.*/
-
-                /*Changing 65 or over to over 65 should not break app*/
-
-                /*So in Tutorial 14 we will fix this*/
-
-                //Button is the control
-                //Passing info to the listening class
                 FormEvent ev = new FormEvent(this, name, occupation);
 
                 if (formListener != null) {
