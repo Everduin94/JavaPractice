@@ -24,6 +24,19 @@ public class MainFrame extends JFrame {
             }
         });
 
+        //Difference between toolbar is we'll have an event object
+       //These are essentially our custom versions
+        //of actionlistner and addactionlistener and actioneventperformed
+        formPanel.setFormListener(new FormListener(){
+            public void formEventOccurred(FormEvent e){
+                String name = e.getName();
+                String occupation = e.getOccupation();
+
+                textPanel.appendText(name + ": " +
+                occupation + "\n");
+            }
+        });
+
         add(formPanel, BorderLayout.WEST);
         add(toolbar, BorderLayout.NORTH);
         add(textPanel, BorderLayout.CENTER);

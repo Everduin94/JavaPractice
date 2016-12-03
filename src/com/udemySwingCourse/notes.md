@@ -13,6 +13,16 @@ Layout Managers
 - Move them to appropriate locations
 - etc...
 
+Just finished Lesson 12
+- Author refers to Swing Events and
+GridBagLayout as the most complex elements.
+- Everything else after this point is much
+simpler.
+- Don't waste time racking your brain over
+the event handling
+- Work on it a second and third time through,
+using your own examples, at your own pace.
+
 
 Lesson 11, Notes removed to stay organized
 ``` java

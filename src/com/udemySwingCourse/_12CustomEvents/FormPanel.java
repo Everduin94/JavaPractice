@@ -3,6 +3,8 @@ package com.udemySwingCourse._12CustomEvents;
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by Erik on 12/3/2016.
@@ -14,7 +16,11 @@ public class FormPanel extends JPanel {
     private JTextField nameField;
     private JTextField occupationField;
     private JButton okBtn;
+    private FormListener formListener;
 
+    //Goal is to send data from form to textarea
+    //However, not directly.
+    //Need to respond to clicks on ok button
     public FormPanel() {
         Dimension dim = getPreferredSize();
         dim.width = 250;
@@ -27,14 +33,45 @@ public class FormPanel extends JPanel {
 
         okBtn = new JButton("OK");
 
-        //Border is close and hardly visible - FIXED
+        //FormPanel doesn't contain any references
+        //to mainframe, but mainframe has used the
+        //set form listener in an anonymous class
+        //and that anonymous class implements from
+        // the listener interface can recieve
+        //the form event occurred.
+
+        //Still kind of confusing
+        //"Don't rack your brain over it"
+        //"Just type it out to get your head around it"
+        //"Understanding this will help you to create"
+        //"Good Swing applications"
+
+        /*Author refers to GridBagLayout and
+        * Swing Events as the most complex
+        * After tutorial 12 everything is much
+        * simpler*/
+        okBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //This will be called on button click
+                String name = nameField.getText();
+                String occupation = occupationField.getText();
+
+                //Button is the control
+                //Passing info to the listening class
+                FormEvent ev = new FormEvent(this, name, occupation);
+
+                if (formListener != null){
+                    formListener.formEventOccurred(ev);
+                }
+
+            }
+        });
+
         Border innerBorder = BorderFactory.createTitledBorder("Add Person");
         Border outerBorder = BorderFactory.createEmptyBorder(5, 5, 5, 5);
         setBorder(BorderFactory.createCompoundBorder(outerBorder, innerBorder));
 
-        //Visual designers are "rubbish"
-
-        //GridBag is most complex and flexible
         setLayout(new GridBagLayout());
 
         GridBagConstraints gc = new GridBagConstraints();
@@ -86,5 +123,9 @@ public class FormPanel extends JPanel {
         gc.anchor = GridBagConstraints.FIRST_LINE_START;
         add(okBtn, gc);
 
+    }
+
+    public void setFormListener(FormListener listener) {
+        this.formListener = listener;
     }
 }
