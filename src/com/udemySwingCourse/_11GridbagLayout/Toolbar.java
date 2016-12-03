@@ -1,4 +1,4 @@
-package com.udemySwingCourse._8Size;
+package com.udemySwingCourse._11GridbagLayout;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,6 +18,9 @@ public class Toolbar extends JPanel implements ActionListener {
     private StringListenerI textListener;
 
     public Toolbar() {
+        //Added compoundBorder to separate
+        setBorder(BorderFactory.createCompoundBorder());
+
         helloButton = new JButton("Hello");
         goodbyeButton = new JButton("Goodbye");
 
@@ -35,15 +38,6 @@ public class Toolbar extends JPanel implements ActionListener {
         this.textListener = listener;
     }
 
-    //Now there are no more references to textpanels
-    //Anything can be a StringListenerI
-    //textEmitted is calling the method
-    //of the anonymous class in MainFrame
-
-    //Sinking into synopsis*
-    //Suggests, don't get frustrated if you don't understand
-    //It's not worth it, just come back a day later
-    //and type it again with different variations.
     @Override
     public void actionPerformed(ActionEvent e) {
         JButton clicked = (JButton) e.getSource();

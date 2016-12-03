@@ -1,4 +1,4 @@
-package com.udemySwingCourse._8Size;
+package com.udemySwingCourse._10TextFieldsLabels;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,18 +13,10 @@ public class MainFrame extends JFrame {
         super("Hello World");
         setLayout(new BorderLayout());
 
-        //Currently 2 components
-        //All com should happen
-        //Through MainFrame (Controller)
-        //And not directly
-        //(Component to component)
         toolbar = new Toolbar();
         textPanel = new TextPanel();
         formPanel = new FormPanel();
 
-        //Once you understand this
-        //You'll understand communication
-        //It's a lot to grasp from one example
         toolbar.setStringListener(new StringListenerI() {
             @Override
             public void textEmitted(String text) {
