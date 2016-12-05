@@ -4,6 +4,8 @@ import com.udemySwingCourse._4CustomComponents.*;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 
 /**
@@ -11,15 +13,24 @@ import java.awt.*;
  */
 
 
-public class Toolbar extends JPanel{
+public class Toolbar extends JPanel implements ActionListener{
 
     private JButton helloButton;
     private JButton goodbyeButton;
 
-
-    public Toolbar () {
+    private TextPanel textPanel;
+//Currently, toolbar is tightly coupled with textpanel
+    //We want the components to know as little
+    //about each other was possible
+    //Communication in textpanel and toolbar
+    //should not be direct like this
+    //Tutorial 7 will be about clean separation
+    public Toolbar() {
         helloButton = new JButton("Hello");
         goodbyeButton = new JButton("Goodbye");
+
+        helloButton.addActionListener(this);
+        goodbyeButton.addActionListener(this);
 
         setLayout(new FlowLayout(FlowLayout.LEFT));
 
@@ -28,6 +39,19 @@ public class Toolbar extends JPanel{
     }
 
     public void setTextPanel(TextPanel textPanel) {
+        this.textPanel = textPanel;
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        JButton clicked = (JButton)e.getSource();
+
+        if(clicked == helloButton) {
+            textPanel.appendText("Hello\n");
+        }
+        else if(clicked == goodbyeButton) {
+            textPanel.appendText("Goodbye\n");
+        }
 
     }
 }
