@@ -32,9 +32,11 @@ public class FormPanel extends JPanel {
         ageList = new JList();
 
         DefaultListModel ageModel = new DefaultListModel();
-        ageModel.addElement("18 or Under");
-        ageModel.addElement("18 to 65");
-        ageModel.addElement("65 or over");
+
+        /*created*/
+        ageModel.addElement(new AgeCategory(0, "Under 18"));
+        ageModel.addElement(new AgeCategory(1, "18 to 65"));
+        ageModel.addElement(new AgeCategory(2, "Over 65"));
         ageList.setModel(ageModel);
 
         ageList.setPreferredSize(new Dimension(110, 70));
@@ -48,11 +50,12 @@ public class FormPanel extends JPanel {
 
                 String name = nameField.getText();
                 String occupation = occupationField.getText();
-                //Could probably pass param here instead of typecast
-                String ageCat = (String) ageList.getSelectedValue();
 
-                System.out.println(ageCat);
-                FormEvent ev = new FormEvent(this, name, occupation);
+                /*Utility class we created in 14*/
+                AgeCategory ageCat = (AgeCategory) ageList.getSelectedValue();
+
+                System.out.println(ageCat.getId() + " " + ageCat.toString());
+                FormEvent ev = new FormEvent(this, name, occupation, ageCat.getId());
 
                 if (formListener != null) {
                     formListener.formEventOccurred(ev);
@@ -129,5 +132,28 @@ public class FormPanel extends JPanel {
 
     public void setFormListener(FormListener listener) {
         this.formListener = listener;
+    }
+}
+
+/*Create package private utility class 'AgeCategory'
+* to store information about AgeCategory.
+* Could use something like a HashMap in this case
+* since there is only an id and a String
+* but it's still a great example.*/
+class AgeCategory {
+
+    private int id;
+    private String text;
+
+    public AgeCategory(int id, String text) {
+        this.text = text;
+        this.id = id;
+    }
+
+    public String toString() {
+        return text;
+    }
+    public int getId() {
+        return id;
     }
 }

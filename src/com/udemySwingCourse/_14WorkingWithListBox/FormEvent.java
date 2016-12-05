@@ -9,6 +9,7 @@ public class FormEvent extends EventObject {
 
     private String name;
     private String occupation;
+    private int ageCat;
 
     /**
      * Constructs a prototypical Event.
@@ -21,12 +22,13 @@ public class FormEvent extends EventObject {
         //In this case source is FormPanel
     }
 
-    public FormEvent(Object source, String name, String occupation) {
+    public FormEvent(Object source, String name, String occupation, int ageCat) {
         super(source); //Source is object that raises event
         //In this case source is FormPanel
 
         this.name = name;
         this.occupation = occupation;
+        this.ageCat = ageCat;
     }
 
     public String getName() {
@@ -44,4 +46,13 @@ public class FormEvent extends EventObject {
     public void setOccupation(String occupation) {
         this.occupation = occupation;
     }
+
+    public int getAgeCat() {
+        return ageCat;
+    }
+
+    public void setAgeCat(int ageCat) {
+        this.ageCat = ageCat;
+    }
+
 }
