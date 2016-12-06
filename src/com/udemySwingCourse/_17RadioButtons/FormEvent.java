@@ -1,4 +1,4 @@
-package com.udemySwingCourse._16CheckBoxes;
+package com.udemySwingCourse._17RadioButtons;
 
 import java.util.EventObject;
 
@@ -11,7 +11,7 @@ public class FormEvent extends EventObject {
     private String occupation;
     private int ageCat;
     private String empCat;
-    private String taxId; //6
+    private String taxId;
     private boolean usCitizen;
 
     /**
@@ -35,10 +35,9 @@ public class FormEvent extends EventObject {
         this.ageCat = ageCat;
         this.empCat = empCat;
         this.taxId = taxId;
-        this.usCitizen = usCitizen; //7
+        this.usCitizen = usCitizen;
     }
 
-    /*8*/
     public boolean isUsCitizen() {
         return usCitizen;
     }
@@ -54,7 +53,6 @@ public class FormEvent extends EventObject {
     public void setTaxId(String taxId) {
         this.taxId = taxId;
     }
-    /*End 8*/
 
     public String getName() {
         return name;

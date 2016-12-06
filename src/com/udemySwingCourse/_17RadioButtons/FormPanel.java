@@ -1,4 +1,4 @@
-package com.udemySwingCourse._16CheckBoxes;
+package com.udemySwingCourse._17RadioButtons;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -19,7 +19,7 @@ public class FormPanel extends JPanel {
     private FormListener formListener;
     private JList ageList;
     private JComboBox empCombo;
-    private JCheckBox citizenCheck; //1
+    private JCheckBox citizenCheck;
 private JTextField taxField;
     private JLabel taxLabel;
 
@@ -34,7 +34,7 @@ private JTextField taxField;
         occupationField = new JTextField(10);
         ageList = new JList();
         empCombo = new JComboBox();
-        citizenCheck = new JCheckBox(); //2
+        citizenCheck = new JCheckBox();
         taxField = new JTextField(10);
         taxLabel = new JLabel("Tax ID: ");
 
@@ -82,11 +82,11 @@ private JTextField taxField;
                 AgeCategory ageCat = (AgeCategory) ageList.getSelectedValue();
                 String empCat = (String) empCombo.getSelectedItem();
                 String taxId = taxField.getText();
-                boolean usCitizen = citizenCheck.isSelected(); //9
+                boolean usCitizen = citizenCheck.isSelected();
 
                 System.out.println(empCat);
                 FormEvent ev = new FormEvent(this, name, occupation, ageCat.getId(), empCat,
-                        taxId, usCitizen); //10
+                        taxId, usCitizen);
 
                 if (formListener != null) {
                     formListener.formEventOccurred(ev);
@@ -178,7 +178,7 @@ private JTextField taxField;
         gc.insets = new Insets(0, 0, 0, 0);
         add(empCombo, gc);
 
-        /*              Next Row               */ //5
+        /*              Next Row               */
         gc.gridy++;
 
         gc.weightx = 1;
@@ -195,7 +195,7 @@ private JTextField taxField;
         gc.insets = new Insets(0, 0, 0, 0);
         add(citizenCheck, gc);
 
-         /*              Next Row               */ //5.1
+         /*              Next Row               */
         gc.gridy++;
 
         gc.weightx = 1;
