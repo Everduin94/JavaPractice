@@ -1,4 +1,4 @@
-package com.udemySwingCourse._17RadioButtons;
+package com.udemySwingCourse._18Menus;
 
 import javax.swing.*;
 import java.awt.*;

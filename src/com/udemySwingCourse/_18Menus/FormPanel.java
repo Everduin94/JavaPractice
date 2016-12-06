@@ -1,4 +1,4 @@
-package com.udemySwingCourse._17RadioButtons;
+package com.udemySwingCourse._18Menus;
 
 import javax.swing.*;
 import javax.swing.border.Border;
@@ -231,7 +231,7 @@ public class FormPanel extends JPanel {
         gc.gridy++;
 
         gc.weightx = 1;
-        gc.weighty = 0.05; //Make Radiobuttons really close
+        gc.weighty = 0.05; //Make Rbuttons really close
 
         gc.gridx = 0;
         gc.fill = GridBagConstraints.NONE;
@@ -250,7 +250,7 @@ public class FormPanel extends JPanel {
         gc.weightx = 1;
         gc.weighty = 0.2;
 
-        //One Label by male Radiobutton
+        //One Label by male Rbutton
 
         gc.gridx = 1;
         gc.anchor = GridBagConstraints.FIRST_LINE_START;
