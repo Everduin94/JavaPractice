@@ -1,7 +1,9 @@
-package com.udemySwingCourse._18Menus;
+package com.udemySwingCourse._19CheckboxInMenu;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class MainFrame extends JFrame {
 
@@ -26,15 +28,15 @@ public class MainFrame extends JFrame {
             }
         });
 
-        formPanel.setFormListener(new FormListener(){
-            public void formEventOccurred(FormEvent e){
+        formPanel.setFormListener(new FormListener() {
+            public void formEventOccurred(FormEvent e) {
                 String name = e.getName();
                 String occupation = e.getOccupation();
                 int ageCat = e.getAgeCat();
                 String empCat = e.getEmpCategory();
 
                 textPanel.appendText(name + ": " +
-                occupation + ": " + ageCat + ": " + empCat +  "\n");
+                        occupation + ": " + ageCat + ": " + empCat + "\n");
 
                 System.out.println(e.getTaxId());
                 System.out.println("Is usCitizen: " + e.isUsCitizen());
@@ -54,7 +56,7 @@ public class MainFrame extends JFrame {
     private JMenuBar createMenuBar() {
         //MenuBar --> menus --> menuItems
 
-        JMenuBar menuBar = new JMenuBar();
+        final JMenuBar menuBar = new JMenuBar();
 
         JMenu fileMenu = new JMenu("File");
         JMenuItem exportData = new JMenuItem("Export Data...");
@@ -63,20 +65,32 @@ public class MainFrame extends JFrame {
 
         //Add MenuItems to Menu(fileMenu)
         fileMenu.add(exportData);
-        fileMenu.add(importData); //Could add actionlisteners
+        fileMenu.add(importData);
         fileMenu.addSeparator();
         fileMenu.add(exitItem);
 
         JMenu windowMenu = new JMenu("Window");
 
         JMenu showMenu = new JMenu("Show"); //Sub-Menu
-        JMenuItem showFormItem = new JMenuItem("Person Form");
+
+
+        JCheckBoxMenuItem showFormItem = new JCheckBoxMenuItem("Person Form");
+        showFormItem.setSelected(true);
+
         showMenu.add(showFormItem);
         windowMenu.add(showMenu); //Add Sub-Menu
 
         //Add Menus to MenuBar
         menuBar.add(fileMenu);
         menuBar.add(windowMenu);
+
+        showFormItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JCheckBoxMenuItem menuItem = (JCheckBoxMenuItem) e.getSource();
+                formPanel.setVisible(menuItem.isSelected());
+            }
+        });
 
         return menuBar;
     }

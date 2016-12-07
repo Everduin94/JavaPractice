@@ -1,4 +1,4 @@
-package com.udemySwingCourse.__9BorderSize;
+package com.udemySwingCourse._21OptionPanes;
 
 import javax.swing.*;
 

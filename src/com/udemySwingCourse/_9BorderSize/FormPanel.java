@@ -1,4 +1,4 @@
-package com.udemySwingCourse.__9BorderSize;
+package com.udemySwingCourse._9BorderSize;
 
 import javax.swing.*;
 import javax.swing.border.Border;

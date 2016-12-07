@@ -55,3 +55,16 @@ Lesson 11, Notes removed to stay organized
         gc.anchor = GridBagConstraints.LINE_START;
         add(nameField, gc);
         ```
+
+
+```
+/*Compiler suggests only need INFORMATION_MESSAGE
+                * Still a good example on using pipes in a param*/
+                String text = JOptionPane.showInputDialog(MainFrame.this,
+                        "Enter your username",
+                        "Enter Username",
+                        JOptionPane.OK_OPTION | JOptionPane.INFORMATION_MESSAGE);
+
+
+                System.out.println(text)
+```
