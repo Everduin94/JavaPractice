@@ -68,3 +68,8 @@ Lesson 11, Notes removed to stay organized
 
                 System.out.println(text)
 ```
+
+
+Things in the backend shouldn't reference the front end
+(There should be no import gui in the back end)
+(However the gui can import the model, but it generally communicates to the model through the controller)

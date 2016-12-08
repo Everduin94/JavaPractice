@@ -1,4 +1,4 @@
-package com.udemySwingCourse._22OpenSaveDialogs;
+package com.udemySwingCourse._23FilteringFiles;
 
 import javax.swing.*;
 import java.awt.*;
@@ -21,6 +21,8 @@ public class MainFrame extends JFrame {
         textPanel = new TextPanel();
         formPanel = new FormPanel();
         fileChooser = new JFileChooser();
+        //File filter is an abstract class
+        fileChooser.addChoosableFileFilter(new PersonFileFilter());
 
         setJMenuBar(createMenuBar());
 
