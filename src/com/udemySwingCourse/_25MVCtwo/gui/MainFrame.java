@@ -1,5 +1,7 @@
 package com.udemySwingCourse._25MVCtwo.gui;
 
+import com.udemySwingCourse._25MVCtwo.controller.Controller;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -12,6 +14,7 @@ public class MainFrame extends JFrame {
     private Toolbar toolbar;
     private FormPanel formPanel;
     private JFileChooser fileChooser;
+    private Controller controller; //Interface between DB and GUI
 
     public MainFrame() {
         super("Hello World");
@@ -21,8 +24,10 @@ public class MainFrame extends JFrame {
         textPanel = new TextPanel();
         formPanel = new FormPanel();
         fileChooser = new JFileChooser();
-        //File filter is an abstract class
+        controller = new Controller();
         fileChooser.addChoosableFileFilter(new PersonFileFilter());
+
+
 
         setJMenuBar(createMenuBar());
 
@@ -35,17 +40,8 @@ public class MainFrame extends JFrame {
 
         formPanel.setFormListener(new FormListener() {
             public void formEventOccurred(FormEvent e) {
-                String name = e.getName();
-                String occupation = e.getOccupation();
-                int ageCat = e.getAgeCat();
-                String empCat = e.getEmpCategory();
-
-                textPanel.appendText(name + ": " +
-                        occupation + ": " + ageCat + ": " + empCat + "\n");
-
-                System.out.println(e.getTaxId());
-                System.out.println("Is usCitizen: " + e.isUsCitizen());
-                System.out.println(e.getGender());
+                /*Goal is to add this to an ArrayList --> Real Database*/
+                controller.addPerson(e);
             }
         });
 

@@ -73,3 +73,41 @@ Lesson 11, Notes removed to stay organized
 Things in the backend shouldn't reference the front end
 (There should be no import gui in the back end)
 (However the gui can import the model, but it generally communicates to the model through the controller)
+
+Having all of these as packages in Intellij and not as directories is terrible.
+
+
+
+26 Summary:
+- We added an actionlistener on the ok button
+in the class FormPanel
+- clicking the ok button fires the action event
+- That action event sets local var values to the
+values in the Swing Components (I.E. JTextBox)
+- After the values are set, a new FormEvent is
+Initialized. Passed to the constructor are the
+values from the Swing Components.
+
+- We've created a FormListener Interface that
+defines FormEventOccurred
+- In the mainframe (local controller). We
+create a setFormListener method that takes
+a form listener as an argument
+- Then we create an anonymous class for that
+argument which defines formEventOccured
+- That formEventOccured method then calls
+controller.addPerson(e) passing in the
+event as the object
+- add person takes a FormEvent as an
+argument and creates a new Person Object
+(adds to the data model) from that data
+and then adds that Person to the database
+(Which is currently just an ArrayList).
+- Then tablePanel (which was previously
+just a textArea) has setData called on it
+to set the data to controller.getPeople()
+which gets all the People in the ArrayList
+
+This is no doubt confusing and not a complete
+explanation, so just work through it a few times
+and don't wrack your brain on it.
