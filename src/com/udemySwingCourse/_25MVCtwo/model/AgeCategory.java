@@ -1,4 +1,4 @@
-package com.udemySwingCourse._24MVC_CreateDataModel.model;
+package com.udemySwingCourse._25MVCtwo.model;
 
 /**
  * Created by everduin on 12/8/2016.
