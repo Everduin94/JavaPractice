@@ -140,3 +140,5 @@ and don't wrack your brain on it.
         * would work
         *
         * Reminds me of TDD, Red -> Green -> Refactor*/
+
+32) Spinners are specialized controls for entering numbers
