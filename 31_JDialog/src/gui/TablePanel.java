@@ -17,6 +17,7 @@ public class TablePanel extends JPanel {
     private JTable table;
     private PersonTableModel tableModel;
     private JPopupMenu popup;
+    private PersonTableListener personTableListener;
 
     public TablePanel() {
         tableModel = new PersonTableModel();
@@ -37,7 +38,7 @@ public class TablePanel extends JPanel {
                 * the popup (part 1 - 29)*/
                 table.getSelectionModel().setSelectionInterval(row, row);
 
-                if(e.getButton() == MouseEvent.BUTTON3){
+                if (e.getButton() == MouseEvent.BUTTON3) {
                     popup.show(table, e.getX(), e.getY());
                     /*e is mouse event, get X , get Y is location*/
                 }
@@ -50,11 +51,24 @@ public class TablePanel extends JPanel {
         removeItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int row = table.getSelectedRow(); //Could also get selection model
-                System.out.println(row);
+                /*Could also get selection
+                * model. (this is simpler)*/
+                int row = table.getSelectedRow();
+
+                /*My large explanation I put in MainFrame connects
+                * back to this block of code right here (The call)*/
+                if (personTableListener != null) {
+                    personTableListener.rowDeleted(row); //Called (30)
+
+                    /*This is the final piece to 30
+                    * where we tell the view (through
+                    * the controller I assume)
+                    * that the model has changed*/
+                    tableModel.fireTableRowsDeleted(row, row);
+                }
+
             }
         });
-
 
         setLayout(new BorderLayout());
         add(new JScrollPane(table), BorderLayout.CENTER);
@@ -66,5 +80,9 @@ public class TablePanel extends JPanel {
 
     public void refresh() {
         tableModel.fireTableDataChanged();
+    }
+
+    public void setPersonTableListener(PersonTableListener listener) {
+        this.personTableListener = listener;
     }
 }

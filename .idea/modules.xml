@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/28_PopupMenus/28_PopupMenus.iml" filepath="$PROJECT_DIR$/28_PopupMenus/28_PopupMenus.iml" />
       <module fileurl="file://$PROJECT_DIR$/29_SelectingRows/29_SelectingRows.iml" filepath="$PROJECT_DIR$/29_SelectingRows/29_SelectingRows.iml" />
+      <module fileurl="file://$PROJECT_DIR$/30_DeleteRows/30_DeleteRows.iml" filepath="$PROJECT_DIR$/30_DeleteRows/30_DeleteRows.iml" />
+      <module fileurl="file://$PROJECT_DIR$/31_JDialog/31_JDialog.iml" filepath="$PROJECT_DIR$/31_JDialog/31_JDialog.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaPractice.iml" filepath="$PROJECT_DIR$/JavaPractice.iml" />
       <module fileurl="file://$PROJECT_DIR$/UdemySwingCourse/UdemySwingCourse/SelectingRows.iml" filepath="$PROJECT_DIR$/UdemySwingCourse/UdemySwingCourse/SelectingRows.iml" />
     </modules>
