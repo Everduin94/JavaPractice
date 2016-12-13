@@ -1,16 +1,20 @@
 package com.udemySwingCourse._27Serialization.model;
 
+import java.io.Serializable;
+
 /**
+ * implements Java.Io Serializable for saving and loading
+ *
  * Created by everduin on 12/8/2016.
  */
-public class Person {
+public class Person implements Serializable{
     /* Similar to the FormEvent - The Person class will be much more 'tight' in the way it stores data
     * in the clearest form possible.
     *
     * Fields copied from FormEvent at the start (name, occupation, ageCat, empCat, taxId, usCitizen, gender)
     */
-    private int id; //Unique key of a Person
-    private static int count = 0; //Each time I create a Person; count++
+    private int id;
+    private static int count = 0;
 
 
     private String name;

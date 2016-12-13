@@ -3,6 +3,8 @@ package com.udemySwingCourse._27Serialization.controller;
 import com.udemySwingCourse._27Serialization.gui.FormEvent;
 import com.udemySwingCourse._27Serialization.model.*;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -67,5 +69,14 @@ public class Controller {
                 taxId, isUs, genderCat);
 
         db.addPerson(person);
+    }
+
+    /*wrapper methods for controller to communicate*/
+    public void saveToFile(File file) throws IOException {
+        db.saveToFile(file);
+    }
+
+    public void loadFromFile(File file) throws IOException {
+        db.loadFromFile(file);
     }
 }
