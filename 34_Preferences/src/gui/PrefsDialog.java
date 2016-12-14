@@ -19,6 +19,8 @@ public class PrefsDialog extends JDialog {
     /*Data Model behind Spinner*/
     private SpinnerNumberModel spinnerModel;
 
+    private PrefsListener prefsListener;
+
     private JTextField userField;
     private JPasswordField passField;
 
@@ -101,14 +103,17 @@ public class PrefsDialog extends JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
                 /*Get value from spinner control*/
-                int value = (Integer) portSpinner.getValue();
+                int port = (Integer) portSpinner.getValue();
 
                 String user = userField.getText();
 
                 /*Wrap the char array in a String to print
                 * Otherwise, it's just hashcode*/
                 char[] password = passField.getPassword();
-                System.out.println(user + " : " + new String(password));
+
+                if(prefsListener != null){
+                    prefsListener.preferencesSet(user, new String(password),port);
+                }
 
                 setVisible(false);
             }
@@ -123,5 +128,16 @@ public class PrefsDialog extends JDialog {
 
         setSize(400, 300);
         setLocationRelativeTo(parent);
+    }
+
+    public void setDefaults(String user, String password, int port){
+        userField.setText(user);
+        passField.setText(password);
+        portSpinner.setValue(port); //Autobox
+
+    }
+
+    public void setPrefsListener(PrefsListener prefsListener){
+        this.prefsListener = prefsListener;
     }
 }

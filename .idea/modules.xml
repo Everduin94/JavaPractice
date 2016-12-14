@@ -8,6 +8,9 @@
       <module fileurl="file://$PROJECT_DIR$/31_JDialog/31_JDialog.iml" filepath="$PROJECT_DIR$/31_JDialog/31_JDialog.iml" />
       <module fileurl="file://$PROJECT_DIR$/32_Spinners/32_Spinners.iml" filepath="$PROJECT_DIR$/32_Spinners/32_Spinners.iml" />
       <module fileurl="file://$PROJECT_DIR$/33_PasswordFields/33_PasswordFields.iml" filepath="$PROJECT_DIR$/33_PasswordFields/33_PasswordFields.iml" />
+      <module fileurl="file://$PROJECT_DIR$/34_Preferences/34_Preferences.iml" filepath="$PROJECT_DIR$/34_Preferences/34_Preferences.iml" />
+      <module fileurl="file://$PROJECT_DIR$/35_Design/35_Design.iml" filepath="$PROJECT_DIR$/35_Design/35_Design.iml" />
+      <module fileurl="file://$PROJECT_DIR$/36_ConnectDB/36_ConnectDB.iml" filepath="$PROJECT_DIR$/36_ConnectDB/36_ConnectDB.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaPractice.iml" filepath="$PROJECT_DIR$/JavaPractice.iml" />
       <module fileurl="file://$PROJECT_DIR$/UdemySwingCourse/UdemySwingCourse/SelectingRows.iml" filepath="$PROJECT_DIR$/UdemySwingCourse/UdemySwingCourse/SelectingRows.iml" />
     </modules>

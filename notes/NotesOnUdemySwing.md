@@ -142,3 +142,10 @@ and don't wrack your brain on it.
         * Reminds me of TDD, Red -> Green -> Refactor*/
 
 32) Spinners are specialized controls for entering numbers
+
+34) Preferences. Author mentions properties are the old way,
+also preferences aren't good for saving large amounts of data.
+
+35) Added some explanation of whats a custom component and whats
+from a java library, leaving this note here as I may remove them
+later on, as they are quite clunky.
