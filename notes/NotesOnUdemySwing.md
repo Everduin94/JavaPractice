@@ -154,4 +154,9 @@ later on, as they are quite clunky.
 
 43 - http://www.oracle.com/technetwork/java/index-138612.html
  is a repository of button icons that can be used for development
- You can also make your own icons.
+ You can also make your own icons. This webpage loads, but
+ the downloads button doesn't seem to work :/
+
+ ^^ So Orcale has some sort of policy against 'Deep Linking'?
+ I went through a link on stackoverflow and managed to download
+ the jar
