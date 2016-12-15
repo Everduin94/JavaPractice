@@ -3,6 +3,7 @@ package model;
 import java.io.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -16,6 +17,7 @@ public class Database {
     /*changing to Linked List for optimized adding and removing in the middle
     * ArrayList is only optimized for adding and removing at the end*/
     private List<Person> people;
+    private Connection con;
 
     public Database() {
         people = new LinkedList<Person>();
@@ -35,18 +37,29 @@ public class Database {
 
     public void connect() throws Exception {
 
+        if(con != null){
+            return;
+        }
         try {
             Class.forName("com.mysql.jdbc.Driver");
         } catch (ClassNotFoundException e) {
             throw new Exception("Driver not found");
         }
-
+        String pass = "JVM!xCS312!";
         String url = "jdbc:mysql://localhost:3306/swingtest";
         /*Real world don't use root.*/
-        Connection con = DriverManager.getConnection(url,"root","");
+        con = DriverManager.getConnection(url, "root", pass);
+        System.out.println("Connected :" + con);
     }
-    public void disconnect(){
 
+    public void disconnect() {
+        if (con != null) {
+            try {
+                con.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     /*Other objects could potentially modify
