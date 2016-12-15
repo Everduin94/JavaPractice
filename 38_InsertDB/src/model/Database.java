@@ -35,7 +35,7 @@ public class Database {
 
     public void connect() throws Exception {
 
-        if(con != null){
+        if (con != null) {
             return;
         }
         try {
@@ -69,9 +69,24 @@ public class Database {
         /*Prepared Statement*/
         PreparedStatement checkStatement = con.prepareStatement(checkSql);
 
+        /*Weird punctuation / malicious sql injection attack is stopped by prepared statement with wild cards*/
+        String insertSql = "insert into people (id, name, age, employment_status, tax_id, us_citizen, gender, occupation)" +
+                " values (?, ?, ?, ?, ?, ?, ?, ?)";
+
+        PreparedStatement insertStatement = con.prepareStatement(insertSql);
+
         /*Iterate through list of people*/
-        for(Person person : people){
-           int id = person.getId();
+        for (Person person : people) {
+            int id = person.getId();
+
+            /*Builder or something would be really useful for Person*/
+            String name = person.getName();
+            String occupation = person.getOccupation();
+            AgeCategory age = person.getAgeCat();
+            EmploymentCategory emp = person.getEmpCat();
+            String tax = person.getTaxId();
+            boolean isUs = person.isUsCitizen();
+            Gender gender = person.getGender();
 
             /*This says look for the first wildcard
             * and replace it with id, in this statement*/
@@ -82,9 +97,38 @@ public class Database {
             checkResult.next();
 
             int count = checkResult.getInt(1);
-            System.out.println("Count for person with ID " + id + " is " + count);
+
+            /*Person is not found in the database*/
+            if (count == 0) {
+                System.out.println("Count for person with ID " + id + " is " + count);
+                System.out.println("Inserting");
+
+                /*Kept receiving SQLException
+                * "No value specified for parameter 8"
+                * This was because my first insert
+                * statement I put col instead of col++
+                * ++ is post-op so the change happens
+                * after the method call happens so
+                * the first row is still 1.*/
+                int col = 1;
+                insertStatement.setInt(col++, id);
+                insertStatement.setString(col++, name);
+                insertStatement.setString(col++, age.name());
+                insertStatement.setString(col++, emp.name());
+                insertStatement.setString(col++, tax);
+                insertStatement.setBoolean(col++, isUs);
+                insertStatement.setString(col++, gender.name());
+                insertStatement.setString(col++, occupation);
+
+                insertStatement.executeUpdate();
+
+            } else {
+                System.out.println("Updating person with ID" + id);
+            }
+
         }
 
+        insertStatement.close();
         checkStatement.close();
     }
 

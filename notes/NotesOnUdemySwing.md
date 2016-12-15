@@ -149,3 +149,9 @@ also preferences aren't good for saving large amounts of data.
 35) Added some explanation of whats a custom component and whats
 from a java library, leaving this note here as I may remove them
 later on, as they are quite clunky.
+
+36/37) Setting up MySQL by myself wasn't bad at all
+
+43 - http://www.oracle.com/technetwork/java/index-138612.html
+ is a repository of button icons that can be used for development
+ You can also make your own icons.
