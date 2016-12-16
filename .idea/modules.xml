@@ -22,7 +22,9 @@
       <module fileurl="file://$PROJECT_DIR$/45_SplitPanes/45_SplitPanes.iml" filepath="$PROJECT_DIR$/45_SplitPanes/45_SplitPanes.iml" />
       <module fileurl="file://$PROJECT_DIR$/46_TabPane/46_TabPane.iml" filepath="$PROJECT_DIR$/46_TabPane/46_TabPane.iml" />
       <module fileurl="file://$PROJECT_DIR$/47_JTree/47_JTree.iml" filepath="$PROJECT_DIR$/47_JTree/47_JTree.iml" />
-      <module fileurl="file://$PROJECT_DIR$/47_TreeSelectionEvents/47_TreeSelectionEvents.iml" filepath="$PROJECT_DIR$/47_TreeSelectionEvents/47_TreeSelectionEvents.iml" />
+      <module fileurl="file://$PROJECT_DIR$/48_TreeSelectionEvent/48_TreeSelectionEvent.iml" filepath="$PROJECT_DIR$/48_TreeSelectionEvent/48_TreeSelectionEvent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/49_DataWithTreeNodes/49_DataWithTreeNodes.iml" filepath="$PROJECT_DIR$/49_DataWithTreeNodes/49_DataWithTreeNodes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/50_TreeIcons/50_TreeIcons.iml" filepath="$PROJECT_DIR$/50_TreeIcons/50_TreeIcons.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaPractice.iml" filepath="$PROJECT_DIR$/JavaPractice.iml" />
       <module fileurl="file://$PROJECT_DIR$/UdemySwingCourse/UdemySwingCourse/SelectingRows.iml" filepath="$PROJECT_DIR$/UdemySwingCourse/UdemySwingCourse/SelectingRows.iml" />
     </modules>

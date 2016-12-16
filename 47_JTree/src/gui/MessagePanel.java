@@ -1,10 +1,15 @@
 package gui;
 
 import javax.swing.*;
+import javax.swing.event.TreeSelectionEvent;
+import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.TreeSelectionModel;
 import java.awt.*;
 
 /**
+ * Accidentally wrote all of 48 in here
+ *
  * Created by everduin on 12/16/2016.
  */
 public class MessagePanel extends JPanel {
@@ -15,6 +20,35 @@ public class MessagePanel extends JPanel {
 
         /*Tree consists of leaves and nodes (They're all default mutable tree nodes)*/
         serverTree = new JTree(createTree());
+
+        /*Set selection mode on the selection model -
+        * which allows you to only select one at
+        * a time. No CTRL + Click to multi-select*/
+        serverTree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
+
+        /*Could have MessagePanel implement TreeSelectionListener
+        * or just create an anonymous class like this*/
+        serverTree.addTreeSelectionListener(new TreeSelectionListener() {
+            @Override
+            public void valueChanged(TreeSelectionEvent e) {
+                /*Called everytime someone selects a node
+                * in the tree*/
+
+                /*This works because our tree is made up of
+                * DefaultMutableTreeNodes (Hence the safe
+                * type casting without any checks)
+                * Because we know every value on value
+                * change will be a DefaultMutableTreeNode*/
+                DefaultMutableTreeNode node = (DefaultMutableTreeNode) serverTree.getLastSelectedPathComponent();
+
+                /*This is whatever you pass to the ctor
+                * of DefaultMutableTreeNode*/
+                Object userObject = node.getUserObject();
+
+                System.out.println(userObject);
+            }
+        });
+
         setLayout(new BorderLayout());
 
         add(new JScrollPane(serverTree), BorderLayout.CENTER);
