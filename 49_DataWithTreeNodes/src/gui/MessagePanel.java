@@ -7,6 +7,29 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreeSelectionModel;
 import java.awt.*;
 
+/*49*/
+class ServerInfo {
+    private String name;
+    private int id;
+
+    ServerInfo(String name,
+               int id) {
+        this.name = name;
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public String toString() {
+        return name;
+    }
+}
+
+
+
 /**
  * Created by everduin on 12/16/2016.
  */
@@ -43,6 +66,26 @@ public class MessagePanel extends JPanel {
                 * of DefaultMutableTreeNode*/
                 Object userObject = node.getUserObject();
 
+                if(userObject instanceof ServerInfo){
+                    int id = ((ServerInfo)userObject).getId();
+
+                    System.out.println("Got user object with ID: " + id);
+                    /*In his example he gets rid of it and reformats
+                    * the toString to print id and name but we use
+                    * this instanceof keyword a lot at NISC to ID
+                    * things like Layers. I'm not very familiar with
+                    * this so it's good practice. I may remove this
+                    * in future modules*/
+                }
+
+                /*How this work is a DefaultMutableTreeNode takes an
+                * object as a parameter, like a String. I've made a
+                * local class 'ServerInfo' that holds a String name
+                * and an int id. So that the info can remain the same,
+                * and the name can be changed in the future.
+                *
+                * Calling println on userObject calls my overrided
+                * toString method.*/
                 System.out.println(userObject);
             }
         });
@@ -57,9 +100,9 @@ public class MessagePanel extends JPanel {
         DefaultMutableTreeNode root = new DefaultMutableTreeNode("Servers");
 
         DefaultMutableTreeNode branch1 = new DefaultMutableTreeNode("USA");
-        DefaultMutableTreeNode server1 = new DefaultMutableTreeNode("New york");
-        DefaultMutableTreeNode server2 = new DefaultMutableTreeNode("Boston");
-        DefaultMutableTreeNode server3 = new DefaultMutableTreeNode("Los Angeles");
+        DefaultMutableTreeNode server1 = new DefaultMutableTreeNode(new ServerInfo("New York", 1));
+        DefaultMutableTreeNode server2 = new DefaultMutableTreeNode(new ServerInfo("Boston", 2));
+        DefaultMutableTreeNode server3 = new DefaultMutableTreeNode(new ServerInfo("Los Angeles", 3));
 
         /*Leaves*/
         branch1.add(server1);
@@ -67,8 +110,8 @@ public class MessagePanel extends JPanel {
         branch1.add(server3);
 
         DefaultMutableTreeNode branch2 = new DefaultMutableTreeNode("UK");
-        DefaultMutableTreeNode server4 = new DefaultMutableTreeNode("London");
-        DefaultMutableTreeNode server5 = new DefaultMutableTreeNode("Edinburgh");
+        DefaultMutableTreeNode server4 = new DefaultMutableTreeNode(new ServerInfo("London", 4));
+        DefaultMutableTreeNode server5 = new DefaultMutableTreeNode(new ServerInfo("Edinburgh", 5));
 
         /*Leaves (Servers)*/
         branch2.add(server4);
