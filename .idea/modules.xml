@@ -18,6 +18,11 @@
       <module fileurl="file://$PROJECT_DIR$/41_WiringInTheDB/41_WiringInTheDB.iml" filepath="$PROJECT_DIR$/41_WiringInTheDB/41_WiringInTheDB.iml" />
       <module fileurl="file://$PROJECT_DIR$/42_InterceptingClosingEvent/42_InterceptingClosingEvent.iml" filepath="$PROJECT_DIR$/42_InterceptingClosingEvent/42_InterceptingClosingEvent.iml" />
       <module fileurl="file://$PROJECT_DIR$/43_ButtonIcons/43_ButtonIcons.iml" filepath="$PROJECT_DIR$/43_ButtonIcons/43_ButtonIcons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/44_Toolbars/44_Toolbars.iml" filepath="$PROJECT_DIR$/44_Toolbars/44_Toolbars.iml" />
+      <module fileurl="file://$PROJECT_DIR$/45_SplitPanes/45_SplitPanes.iml" filepath="$PROJECT_DIR$/45_SplitPanes/45_SplitPanes.iml" />
+      <module fileurl="file://$PROJECT_DIR$/46_TabPane/46_TabPane.iml" filepath="$PROJECT_DIR$/46_TabPane/46_TabPane.iml" />
+      <module fileurl="file://$PROJECT_DIR$/47_JTree/47_JTree.iml" filepath="$PROJECT_DIR$/47_JTree/47_JTree.iml" />
+      <module fileurl="file://$PROJECT_DIR$/47_TreeSelectionEvents/47_TreeSelectionEvents.iml" filepath="$PROJECT_DIR$/47_TreeSelectionEvents/47_TreeSelectionEvents.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaPractice.iml" filepath="$PROJECT_DIR$/JavaPractice.iml" />
       <module fileurl="file://$PROJECT_DIR$/UdemySwingCourse/UdemySwingCourse/SelectingRows.iml" filepath="$PROJECT_DIR$/UdemySwingCourse/UdemySwingCourse/SelectingRows.iml" />
     </modules>
