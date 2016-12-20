@@ -4,6 +4,7 @@ import javax.swing.*;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeCellRenderer;
 import javax.swing.tree.TreeSelectionModel;
 import java.awt.*;
 
@@ -36,11 +37,20 @@ class ServerInfo {
 public class MessagePanel extends JPanel {
 
     private JTree serverTree;
+    private DefaultTreeCellRenderer treeCellRenderer;
 
     public MessagePanel() {
 
+        /*Now we can set the icons*/
+        treeCellRenderer = new DefaultTreeCellRenderer();
+
+        treeCellRenderer.setLeafIcon(Utils.createIcon("/images/Server16.gif"));
+        treeCellRenderer.setOpenIcon(Utils.createIcon("/images/WebComponent16.gif"));
+        treeCellRenderer.setClosedIcon(Utils.createIcon("/images/WebComponentAdd16.gif"));
+
         /*Tree consists of leaves and nodes (They're all default mutable tree nodes)*/
         serverTree = new JTree(createTree());
+        serverTree.setCellRenderer(treeCellRenderer);
 
         /*Set selection mode on the selection model -
         * which allows you to only select one at
