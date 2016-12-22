@@ -12,8 +12,11 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeCellRenderer;
 import javax.swing.tree.TreeSelectionModel;
 import java.awt.*;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
+import java.util.List;
+import java.util.concurrent.ExecutionException;
+
+import static javafx.scene.input.KeyCode.T;
 
 /**
  * (52) CustomCellEditors, 26 minutes long and referred to one of the more difficult tutorials.
@@ -72,11 +75,9 @@ public class MessagePanel extends JPanel {
                 }
 
                 messageServer.setSelectedServers(selectedServers);
-                System.out.println("Messages Waiting: " + messageServer.getMessageCount());
 
-                for(Message message : messageServer){
-                    System.out.println(message.getTitle());
-                }
+
+                retrieveMessages();
             }
 
             @Override
@@ -88,6 +89,68 @@ public class MessagePanel extends JPanel {
         setLayout(new BorderLayout());
 
         add(new JScrollPane(serverTree), BorderLayout.CENTER);
+    }
+
+    /*Note - This throws a currentModificationException if you check a box before the
+    * first box is finished!*/
+    private void retrieveMessages(){
+
+        System.out.println("Messages Waiting: " + messageServer.getMessageCount());
+
+        /*Template class*/
+        SwingWorker<List<Message>, Integer> worker = new SwingWorker<List<Message>, Integer>() {
+
+            @Override
+            protected List<Message> doInBackground() throws Exception {
+                /*Code you want to run in a separate thread
+                * SwingWorker will use available Swing thread
+                * if all threads are being used. Then it will
+                * queue code until it is available*/
+
+                List<Message> retrieveMessages = new ArrayList<>();
+
+                int count = 0;
+                for(Message message : messageServer){
+                    System.out.println(message.getTitle());
+
+                    retrieveMessages.add(message);
+
+                    count++;
+
+                    /*Process will recieve whatever objects you publish
+                    * You may publish many things quickly, so it's called
+                    * on the main thread. Type that you specified in 2nd
+                    * argument*/
+                    publish(count);
+                }
+
+                return retrieveMessages;
+            }
+
+            @Override
+            protected void process(List<Integer> counts) {
+                /*For getting feedback from your swing worker*/
+
+                /*Most recent value*/
+                int retrieved = counts.get(counts.size() - 1);
+                System.out.println("Got " + retrieved + " messages");
+            }
+
+            @Override
+            protected void done() {
+                try {
+                    /*get() returns first type specified in worker*/
+                    List<Message> retrievedMessages = get();
+                    System.out.println("Retrived " + retrievedMessages.size() + " Messages.");
+                } catch (InterruptedException | ExecutionException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        };
+
+        /*Run*/
+        worker.execute();
     }
 
     /*Good lesson on building up a tree*/
