@@ -160,3 +160,53 @@ later on, as they are quite clunky.
  ^^ So Orcale has some sort of policy against 'Deep Linking'?
  I went through a link on stackoverflow and managed to download
  the jar
+
+
+ 53 - Removed tree selection listener
+ ```java
+
+  /*Could have MessagePanel implement TreeSelectionListener
+         * or just create an anonymous class like this*/
+         serverTree.addTreeSelectionListener(new TreeSelectionListener() {
+             @Override
+             public void valueChanged(TreeSelectionEvent e) {
+                 /*Called everytime someone selects a node
+                 * in the tree*/
+
+                 /*This works because our tree is made up of
+                 * DefaultMutableTreeNodes (Hence the safe
+                 * type casting without any checks)
+                 * Because we know every value on value
+                 * change will be a DefaultMutableTreeNode*/
+                 DefaultMutableTreeNode node = (DefaultMutableTreeNode) serverTree.getLastSelectedPathComponent();
+
+                 /*This is whatever you pass to the ctor
+                 * of DefaultMutableTreeNode*/
+                 Object userObject = node.getUserObject();
+
+                 if(userObject instanceof ServerInfo){
+                     int id = ((ServerInfo)userObject).getId();
+
+                     System.out.println("Got user object with ID: " + id);
+                     /*In his example he gets rid of it and reformats
+                     * the toString to print id and name but we use
+                     * this instanceof keyword a lot at NISC to ID
+                     * things like Layers. I'm not very familiar with
+                     * this so it's good practice. I may remove this
+                     * in future modules*/
+                 }
+
+                 /*How this work is a DefaultMutableTreeNode takes an
+                 * object as a parameter, like a String. I've made a
+                 * local class 'ServerInfo' that holds a String name
+                 * and an int id. So that the info can remain the same,
+                 * and the name can be changed in the future.
+                 *
+                 * Calling println on userObject calls my overrided
+                 * toString method.*/
+                 System.out.println(userObject);
+             }
+         });
+
+ ```
+

@@ -28,6 +28,8 @@
       <module fileurl="file://$PROJECT_DIR$/51_CustomCellRenderers/51_CustomCellRenderers.iml" filepath="$PROJECT_DIR$/51_CustomCellRenderers/51_CustomCellRenderers.iml" />
       <module fileurl="file://$PROJECT_DIR$/52_CustomCellEditors/52_CustomCellEditors.iml" filepath="$PROJECT_DIR$/52_CustomCellEditors/52_CustomCellEditors.iml" />
       <module fileurl="file://$PROJECT_DIR$/53_NodeEditorChanges/53_NodeEditorChanges.iml" filepath="$PROJECT_DIR$/53_NodeEditorChanges/53_NodeEditorChanges.iml" />
+      <module fileurl="file://$PROJECT_DIR$/54_SimulatedMessageServer/54_SimulatedMessageServer.iml" filepath="$PROJECT_DIR$/54_SimulatedMessageServer/54_SimulatedMessageServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/55_SwingWorkerClass/55_SwingWorkerClass.iml" filepath="$PROJECT_DIR$/55_SwingWorkerClass/55_SwingWorkerClass.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaPractice.iml" filepath="$PROJECT_DIR$/JavaPractice.iml" />
       <module fileurl="file://$PROJECT_DIR$/UdemySwingCourse/UdemySwingCourse/SelectingRows.iml" filepath="$PROJECT_DIR$/UdemySwingCourse/UdemySwingCourse/SelectingRows.iml" />
     </modules>
