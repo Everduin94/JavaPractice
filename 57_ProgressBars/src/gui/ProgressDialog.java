@@ -8,9 +8,50 @@ import java.awt.*;
  */
 public class ProgressDialog extends JDialog {
 
+    private JButton cancleButton;
+    private JProgressBar progressBar;
+
     public ProgressDialog(Window parent)  {
         super(parent, "Messages Downloading...", ModalityType.APPLICATION_MODAL);
 
-        setSize(400, 200);
+        cancleButton = new JButton("Cancle");
+        progressBar = new JProgressBar();
+
+        //progressBar.setIndeterminate(true); /*This just shows an indication and not actual progress*/
+
+        setLayout(new FlowLayout());
+
+        Dimension size = cancleButton.getPreferredSize();
+        size.width = 400;
+        progressBar.setPreferredSize(size);
+
+        add(progressBar);
+        add(cancleButton);
+
+        pack(); /*Shrinkwraps your dialog around the controls you've added*/
+
+        setLocationRelativeTo(parent);
+    }
+
+    @Override
+    public void setVisible(final boolean visible) {
+        progressBar.setValue(0);
+
+        
+
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                ProgressDialog.super.setVisible(visible);
+            }
+        });
+    }
+
+    public void setMaximum(int value){
+        progressBar.setMaximum(value);
+    }
+
+    public void setValue(int value){
+        progressBar.setValue(value); /*Sets current Value*/
     }
 }

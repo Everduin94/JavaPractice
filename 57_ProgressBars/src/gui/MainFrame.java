@@ -35,7 +35,7 @@ public class MainFrame extends JFrame { //Custom JFrame, Local GUI Controller
 
         controller = new Controller();
         prefsDialog = new PrefsDialog(this); /*This = MainFrame*/
-        messagePanel = new MessagePanel();
+        messagePanel = new MessagePanel(this);
 
         /*Starting to add more layers to the gui of the application
         * that are becoming harder to follow because there's small

@@ -210,3 +210,6 @@ later on, as they are quite clunky.
 
  ```
 
+On lesson 57, close to finishing Desktop, may try and knock out the rest of the modules on Friday
+- Will possibly need review, I think I'll just try making my own app and refering to each section
+as needed to make my application.

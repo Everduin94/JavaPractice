@@ -20,7 +20,7 @@ import static javafx.scene.input.KeyCode.T;
 
 /**
  * (52) CustomCellEditors, 26 minutes long and referred to one of the more difficult tutorials.
- *
+ * <p>
  * Created by everduin on 12/16/2016.
  */
 public class MessagePanel extends JPanel {
@@ -34,7 +34,7 @@ public class MessagePanel extends JPanel {
     private Set<Integer> selectedServers;
     private MessageServer messageServer;
 
-    public MessagePanel() {
+    public MessagePanel(JFrame parent) {
 
         messageServer = new MessageServer();
 
@@ -51,7 +51,7 @@ public class MessagePanel extends JPanel {
         treeCellEditor = new ServerTreeCellEditor();
 
         /*MainFrame*/
-        progressDialog = new ProgressDialog((Window) getParent());
+        progressDialog = new ProgressDialog((Window) parent);
 
         /*Tree consists of leaves and nodes (They're all default mutable tree nodes)*/
         serverTree = new JTree(createTree());
@@ -73,7 +73,7 @@ public class MessagePanel extends JPanel {
 
                 /*If we add it twice, it's fine. Sets only store unique values*/
                 int serverId = info.getId();
-                if(info.isChecked()) {
+                if (info.isChecked()) {
                     selectedServers.add(serverId);
                 } else {
                     selectedServers.remove(serverId);
@@ -98,19 +98,13 @@ public class MessagePanel extends JPanel {
 
     /*Note - This throws a currentModificationException if you check a box before the
     * first box is finished!*/
-    private void retrieveMessages(){
+    private void retrieveMessages() {
 
-        System.out.println("Messages Waiting: " + messageServer.getMessageCount());
+        /*57 removing multithreading from here, replaced in setVisible in progress dialog*/
 
+        progressDialog.setMaximum(messageServer.getMessageCount());
+        progressDialog.setVisible(true);
 
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                System.out.println("Showing Modal Dialog");
-                progressDialog.setVisible(true);
-                System.out.println("Finishing Modal Dialog");
-            }
-        });
 
         /*Template class*/
         SwingWorker<List<Message>, Integer> worker = new SwingWorker<List<Message>, Integer>() {
@@ -125,7 +119,7 @@ public class MessagePanel extends JPanel {
                 List<Message> retrieveMessages = new ArrayList<>();
 
                 int count = 0;
-                for(Message message : messageServer){
+                for (Message message : messageServer) {
                     System.out.println(message.getTitle());
 
                     retrieveMessages.add(message);
@@ -148,7 +142,7 @@ public class MessagePanel extends JPanel {
 
                 /*Most recent value*/
                 int retrieved = counts.get(counts.size() - 1);
-                System.out.println("Got " + retrieved + " messages");
+                progressDialog.setValue(retrieved);
             }
 
             @Override
@@ -175,8 +169,8 @@ public class MessagePanel extends JPanel {
 
         DefaultMutableTreeNode branch1 = new DefaultMutableTreeNode("USA");
         DefaultMutableTreeNode server1 = new DefaultMutableTreeNode(new ServerInfo("New York", 1, selectedServers.contains(0)));
-        DefaultMutableTreeNode server2 = new DefaultMutableTreeNode(new ServerInfo("Boston", 2,  selectedServers.contains(1)));
-        DefaultMutableTreeNode server3 = new DefaultMutableTreeNode(new ServerInfo("Los Angeles", 3,  selectedServers.contains(2)));
+        DefaultMutableTreeNode server2 = new DefaultMutableTreeNode(new ServerInfo("Boston", 2, selectedServers.contains(1)));
+        DefaultMutableTreeNode server3 = new DefaultMutableTreeNode(new ServerInfo("Los Angeles", 3, selectedServers.contains(2)));
 
         /*Leaves*/
         branch1.add(server1);
@@ -184,8 +178,8 @@ public class MessagePanel extends JPanel {
         branch1.add(server3);
 
         DefaultMutableTreeNode branch2 = new DefaultMutableTreeNode("UK");
-        DefaultMutableTreeNode server4 = new DefaultMutableTreeNode(new ServerInfo("London", 4,  selectedServers.contains(3)));
-        DefaultMutableTreeNode server5 = new DefaultMutableTreeNode(new ServerInfo("Edinburgh", 5,  selectedServers.contains(4)));
+        DefaultMutableTreeNode server4 = new DefaultMutableTreeNode(new ServerInfo("London", 4, selectedServers.contains(3)));
+        DefaultMutableTreeNode server5 = new DefaultMutableTreeNode(new ServerInfo("Edinburgh", 5, selectedServers.contains(4)));
 
         /*Leaves (Servers)*/
         branch2.add(server4);
