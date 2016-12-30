@@ -32,6 +32,11 @@
       <module fileurl="file://$PROJECT_DIR$/55_SwingWorkerClass/55_SwingWorkerClass.iml" filepath="$PROJECT_DIR$/55_SwingWorkerClass/55_SwingWorkerClass.iml" />
       <module fileurl="file://$PROJECT_DIR$/56_ModalDialogs/56_ModalDialogs.iml" filepath="$PROJECT_DIR$/56_ModalDialogs/56_ModalDialogs.iml" />
       <module fileurl="file://$PROJECT_DIR$/57_ProgressBars/57_ProgressBars.iml" filepath="$PROJECT_DIR$/57_ProgressBars/57_ProgressBars.iml" />
+      <module fileurl="file://$PROJECT_DIR$/58_DistributingYourApp/58_DistributingYourApp.iml" filepath="$PROJECT_DIR$/58_DistributingYourApp/58_DistributingYourApp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/59_ProgressBarText/59_ProgressBarText.iml" filepath="$PROJECT_DIR$/59_ProgressBarText/59_ProgressBarText.iml" />
+      <module fileurl="file://$PROJECT_DIR$/60_CancelWorkerThreads/60_CancleWorkerThreads.iml" filepath="$PROJECT_DIR$/60_CancelWorkerThreads/60_CancleWorkerThreads.iml" />
+      <module fileurl="file://$PROJECT_DIR$/61_SettingCursor/61_SettingCursor.iml" filepath="$PROJECT_DIR$/61_SettingCursor/61_SettingCursor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/62_NestingSplitPanes/62_NestingSplitPanes.iml" filepath="$PROJECT_DIR$/62_NestingSplitPanes/62_NestingSplitPanes.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaPractice.iml" filepath="$PROJECT_DIR$/JavaPractice.iml" />
       <module fileurl="file://$PROJECT_DIR$/UdemySwingCourse/UdemySwingCourse/SelectingRows.iml" filepath="$PROJECT_DIR$/UdemySwingCourse/UdemySwingCourse/SelectingRows.iml" />
     </modules>

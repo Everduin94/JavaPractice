@@ -43,6 +43,9 @@ public class Database {
         } catch (ClassNotFoundException e) {
             throw new Exception("Driver not found");
         }
+        /*URL needs to be reachable from other computers if sending runnable jar
+        *
+        * use J-Smooth to create a .exe*/
         String pass = "JVM!xCS312!";
         String url = "jdbc:mysql://localhost:3306/swingtest";
         /*Real world don't use root.*/

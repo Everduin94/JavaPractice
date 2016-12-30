@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="58_DistributingYourApp:jar">
+    <output-path>$PROJECT_DIR$/../Jars</output-path>
+    <root id="archive" name="58_DistributingYourApp.jar">
+      <element id="module-output" name="58_DistributingYourApp" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/mysql-connector-java-5.0.8-bin.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
