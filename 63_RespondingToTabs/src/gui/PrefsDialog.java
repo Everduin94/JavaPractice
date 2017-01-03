@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
  * Created by everduin on 12/13/2016.
  */
 public class PrefsDialog extends JDialog {
-
+/*Testing Commit Remote Changes*/
     private JButton okButton;
     private JButton cancleButton;
     private JSpinner portSpinner;
