@@ -15,14 +15,21 @@ public class FormEvent extends EventObject {
     private boolean usCitizen;
     private String gender;
 
-
+    /**
+     * Constructs a prototypical Event.
+     *
+     * @param source The object on which the Event initially occurred.
+     * @throws IllegalArgumentException if source is null.
+     */
     public FormEvent(Object source) {
-        super(source);
+        super(source); //Source is object that raises event
+        //In this case source is FormPanel
     }
 
     public FormEvent(Object source, String name, String occupation, int ageCat, String empCat,
                      String taxId, boolean usCitizen, String gender) {
-        super(source); //Source = FormPanel
+        super(source); //Source is object that raises event
+        //In this case source is FormPanel
 
         this.name = name;
         this.occupation = occupation;

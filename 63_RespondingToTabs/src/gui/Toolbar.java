@@ -51,7 +51,7 @@ public class Toolbar extends JToolBar implements ActionListener {
         add(refreshButton);
     }
 
-    public void setStringListener(ToolbarListener listener) {
+    public void setToolbarListener(ToolbarListener listener) {
 
         this.toolbarListener = listener;
     }

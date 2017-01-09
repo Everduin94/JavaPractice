@@ -86,7 +86,7 @@ public class MainFrame extends JFrame { //Custom JFrame, Local GUI Controller
 
         setJMenuBar(createMenuBar());
 
-        toolbar.setStringListener(new ToolbarListener() {
+        toolbar.setToolbarListener(new ToolbarListener() {
 
             @Override
             public void refreshEventOccured() {
