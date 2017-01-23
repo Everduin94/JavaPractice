@@ -24,6 +24,36 @@ public class PersonTableModel extends AbstractTableModel {
         return columnNames[column];
     }
 
+    @Override
+    public boolean isCellEditable(int row, int col) {
+
+        /*any row in col1 should be editable*/
+        switch (col) {
+            case 1:
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    @Override
+    public void setValueAt(Object aValue, int row, int col) {
+
+        if(db == null) {
+            return;
+        }
+
+        Person person = db.get(row); //This is a reference pointing at a value in a literal List<People>
+        switch (col) {
+            case 1:
+                //Get reference to person object at specified row
+                person.setName((String) aValue);
+                break;
+            default:
+                return;
+        }
+    }
+
     public void setData(List<Person> db) {
         this.db = db;
     }

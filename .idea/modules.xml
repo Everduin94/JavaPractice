@@ -43,6 +43,10 @@
       <module fileurl="file://$PROJECT_DIR$/67_LoadFontFile/67_LoadFontFile.iml" filepath="$PROJECT_DIR$/67_LoadFontFile/67_LoadFontFile.iml" />
       <module fileurl="file://$PROJECT_DIR$/68_ConfigDBconnection/68_ConfigDBconnection.iml" filepath="$PROJECT_DIR$/68_ConfigDBconnection/68_ConfigDBconnection.iml" />
       <module fileurl="file://$PROJECT_DIR$/69_EditableTables/69_EditableTables.iml" filepath="$PROJECT_DIR$/69_EditableTables/69_EditableTables.iml" />
+      <module fileurl="file://$PROJECT_DIR$/70_CheckboxesInTableCells/70_CheckboxesInTableCells.iml" filepath="$PROJECT_DIR$/70_CheckboxesInTableCells/70_CheckboxesInTableCells.iml" />
+      <module fileurl="file://$PROJECT_DIR$/71_CustomTableCellRenderer/71_CustomTableCellRenderer.iml" filepath="$PROJECT_DIR$/71_CustomTableCellRenderer/71_CustomTableCellRenderer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/72_CustomTableCellEditor/72_CustomTableCellEditor.iml" filepath="$PROJECT_DIR$/72_CustomTableCellEditor/72_CustomTableCellEditor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/71_CustomTableCellRenderer/CustomTableCellRenderer.iml" filepath="$PROJECT_DIR$/71_CustomTableCellRenderer/CustomTableCellRenderer.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaPractice.iml" filepath="$PROJECT_DIR$/JavaPractice.iml" />
       <module fileurl="file://$PROJECT_DIR$/UdemySwingCourse/UdemySwingCourse/SelectingRows.iml" filepath="$PROJECT_DIR$/UdemySwingCourse/UdemySwingCourse/SelectingRows.iml" />
     </modules>
