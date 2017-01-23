@@ -38,6 +38,11 @@
       <module fileurl="file://$PROJECT_DIR$/62_NestingSplitPanes/62_NestingSplitPanes.iml" filepath="$PROJECT_DIR$/62_NestingSplitPanes/62_NestingSplitPanes.iml" />
       <module fileurl="file://$PROJECT_DIR$/63_RespondingToTabs/63_RespondingToTabs.iml" filepath="$PROJECT_DIR$/63_RespondingToTabs/63_RespondingToTabs.iml" />
       <module fileurl="file://$PROJECT_DIR$/64_CustomListRenderer/64_CustomListRenderer.iml" filepath="$PROJECT_DIR$/64_CustomListRenderer/64_CustomListRenderer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/65_RepondToListSelection/65_RepondToListSelection.iml" filepath="$PROJECT_DIR$/65_RepondToListSelection/65_RepondToListSelection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/66_Font/66_Font.iml" filepath="$PROJECT_DIR$/66_Font/66_Font.iml" />
+      <module fileurl="file://$PROJECT_DIR$/67_LoadFontFile/67_LoadFontFile.iml" filepath="$PROJECT_DIR$/67_LoadFontFile/67_LoadFontFile.iml" />
+      <module fileurl="file://$PROJECT_DIR$/68_ConfigDBconnection/68_ConfigDBconnection.iml" filepath="$PROJECT_DIR$/68_ConfigDBconnection/68_ConfigDBconnection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/69_EditableTables/69_EditableTables.iml" filepath="$PROJECT_DIR$/69_EditableTables/69_EditableTables.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaPractice.iml" filepath="$PROJECT_DIR$/JavaPractice.iml" />
       <module fileurl="file://$PROJECT_DIR$/UdemySwingCourse/UdemySwingCourse/SelectingRows.iml" filepath="$PROJECT_DIR$/UdemySwingCourse/UdemySwingCourse/SelectingRows.iml" />
     </modules>

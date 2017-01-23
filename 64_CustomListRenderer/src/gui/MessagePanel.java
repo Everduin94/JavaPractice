@@ -117,10 +117,12 @@ public class MessagePanel extends JPanel implements ProgressDialogListener {
 
         textPanel = new TextPanel();
         messageList = new JList(messageListModel);
+        messageList.setCellRenderer(new MessageListRenderer());
 
         // TODO: 12/30/2016 TODO to find complex nesting of panes
         lowerPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, new JScrollPane(messageList), textPanel);
         upperPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, new JScrollPane(serverTree), lowerPane);
+
 
         //Control will take up all horizontal space, so first parameter is arbitrary in this case
         textPanel.setMinimumSize(new Dimension(10, 150));
@@ -209,7 +211,7 @@ public class MessagePanel extends JPanel implements ProgressDialogListener {
 
                     messageListModel.removeAllElements(); //To clear list
                     for(Message message : retrievedMessages){
-                        messageListModel.addElement(message.getTitle());
+                        messageListModel.addElement(message);
                     }
 
                 } catch (InterruptedException | ExecutionException e) {
