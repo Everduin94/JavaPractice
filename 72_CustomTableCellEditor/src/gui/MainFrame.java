@@ -29,6 +29,18 @@ public class MainFrame extends JFrame { //Custom JFrame, Local GUI Controller
     public MainFrame() {
         super("Swing Application");
 
+        try { //Built in look and feel - Jar options for free: SeaGlass.
+            for (UIManager.LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+                //This looks significantly better
+                if ("Nimbus".equals(info.getName())) {
+                    UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         setLayout(new BorderLayout());
 
         toolbar = new Toolbar();

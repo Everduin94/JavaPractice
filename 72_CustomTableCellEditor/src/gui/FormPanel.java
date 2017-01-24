@@ -29,7 +29,7 @@ public class FormPanel extends JPanel {
 
     public FormPanel() {
         Dimension dim = getPreferredSize();
-        dim.width = 250;
+        dim.width = 350;
         setPreferredSize(dim);
         setMinimumSize(dim);
 

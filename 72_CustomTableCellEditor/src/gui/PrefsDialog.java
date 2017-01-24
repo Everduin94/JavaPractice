@@ -14,7 +14,7 @@ import java.awt.event.ActionListener;
 public class PrefsDialog extends JDialog {
 /*Testing Commit Remote Changes*/
     private JButton okButton;
-    private JButton cancleButton;
+    private JButton cancelButton;
     private JSpinner portSpinner;
 
     /*Data Model behind Spinner*/
@@ -29,7 +29,7 @@ public class PrefsDialog extends JDialog {
         super(parent, "Preferences", false);
 
         okButton = new JButton("OK");
-        cancleButton = new JButton("Cancle");
+        cancelButton = new JButton("Cancel");
 
         /*3306 is a MySql port*/
         spinnerModel = new SpinnerNumberModel(3306, 0, 9999, 1);
@@ -63,7 +63,7 @@ public class PrefsDialog extends JDialog {
             }
         });
 
-        cancleButton.addActionListener(new ActionListener() {
+        cancelButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
@@ -111,7 +111,7 @@ public class PrefsDialog extends JDialog {
         gc.weighty = 1;
 
         /*Set preferred size and not fill cell*/
-        gc.fill = GridBagConstraints.NONE;
+        gc.fill = GridBagConstraints.HORIZONTAL;
 
         gc.gridx = 0;
         gc.anchor = GridBagConstraints.EAST;
@@ -131,7 +131,7 @@ public class PrefsDialog extends JDialog {
         gc.weightx = 1;
         gc.weighty = 1;
         /*Set preferred size and not fill cell*/
-        gc.fill = GridBagConstraints.NONE;
+        gc.fill = GridBagConstraints.HORIZONTAL;
 
         gc.gridx = 0;
         gc.anchor = GridBagConstraints.EAST;
@@ -164,10 +164,10 @@ public class PrefsDialog extends JDialog {
         /*Buttons Panel*/
         buttonsPanel.setLayout(new FlowLayout(FlowLayout.RIGHT));
         buttonsPanel.add(okButton);
-        buttonsPanel.add(cancleButton);
+        buttonsPanel.add(cancelButton);
 
         /*Clever way to make buttons the same size*/
-        Dimension btnSize = cancleButton.getPreferredSize();
+        Dimension btnSize = cancelButton.getPreferredSize();
         okButton.setPreferredSize(btnSize);
 
         /*Add sub panels to dialog*/
