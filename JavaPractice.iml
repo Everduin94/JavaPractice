@@ -3,9 +3,11 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/SwingUdemyCourse/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/swingudemycourse/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/workspace-clean" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/jsouptutorial/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/designpatterns/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/ai/src" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
